@@ -5834,10 +5834,14 @@ hr.small {
   font-size: 18px; }
 
 /* Text */
-.page-title {
+.page-title h1 {
   padding-bottom: 30px;
   font-weight: 300;
   font-size: 48px; }
+
+.text-large {
+  font-size: 4.5em;
+  padding: 40px; }
 
 /* Footer */
 footer {
@@ -5955,7 +5959,7 @@ footer {
   display: table;
   width: 100%;
   height: 400px;
-  background: url(../img/coins_2.jpg) no-repeat center center scroll;
+  background: url(../img/keyboard.jpg) no-repeat center center scroll;
   background-size: cover; }
   .callout h1 {
     color: #f3f1eb;
@@ -6020,7 +6024,7 @@ footer {
   display: table;
   width: 100%;
   height: 400px;
-  background: url(../img/coins_2.jpg) no-repeat center center scroll;
+  background: url(../img/keyboard.jpg) no-repeat center center scroll;
   background-size: cover; }
   .callout h1 {
     color: #f3f1eb;

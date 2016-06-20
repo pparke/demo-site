@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Link extends Model
 {
   /**
    * The attributes that are mass assignable.
    */
   protected $fillable = [
-    'user_id', 'title', 'content', 'slug', 'sample'
+    'user_id', 'title', 'url', 'tags',
   ];
 
   /**
@@ -18,7 +18,8 @@ class Blog extends Model
    */
   public static $createRules = array(
 		'title' => 'required|min:1|max:255',
-		'content' => 'required|min:1|max:50000'
+		'url' => 'required|min:1|max:512',
+    'tags' => ''
 	);
 
   /**
@@ -30,18 +31,10 @@ class Blog extends Model
   }
 
   /**
-   * Find the blog with the given slug
-   * @param  string $slug - the slug to search for
-   * @return the blog if found or false if not
+   * The tags for this link
    */
-  public static function findBySlug($slug)
+  public function tags()
   {
-  	$blog = self::where('slug', $slug)->first();
-    if (count($blog) == 0) {
-      return false;
-    }
-    else {
-      return $blog;
-    }
+    return $this->belongsToMany('App\Tag');
   }
 }

@@ -1,15 +1,13 @@
+{{-- views/blog/create --}}
+
 @extends('layouts.app')
 
 @section('content')
-<div class="row-fluid top30 page-title">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Blog</h1>
-      </div>
-    </div>
-  </div>
-</div>
+
+<!-- Navigation -->
+@include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links']])
+
+@include('components.page_title', ['title' => 'Blog'])
 
 {{-- Create Blog Form --}}
 <div class="segment bg-green">

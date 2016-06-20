@@ -132,9 +132,16 @@ hr.small {
 
 /* Text */
 .page-title {
-  padding-bottom:30px;
-  font-weight: 300;
-  font-size: 48px;
+  h1 {
+    padding-bottom:30px;
+    font-weight: 300;
+    font-size: 48px;
+  }
+}
+
+.text-large {
+  font-size: 4.5em;
+  padding: 40px;
 }
 
 

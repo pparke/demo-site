@@ -32,6 +32,45 @@ or manually
 cd laradock && docker exec -it {Workspace-Container-Name} bash
 ```
 
+There are also several other convenience commands included in the Makefile.
+
+Display container status and names
+```
+make status
+```
+or
+```
+docker-compose ps
+```
+
+Connect to db cli
+```
+make sql
+```
+or
+```
+cd laradock && docker exec -it laradock_postgres_1 psql -h localhost -U homestead
+```
+
+Shutdown all containers
+```
+make stop
+```
+or
+```
+cd laradock && docker-compose stop
+```
+
+Remove all containers
+```
+make clean
+```
+or
+```
+cd laradock && docker-compose rm --force
+```
+
+
 4) Edit the Laravel configuration file by opening the ```.env``` file in the ```site``` directory and set the ```DB_HOST``` to your Docker IP
 [How to find my Docker IP address](https://github.com/LaraDock/laradock/blob/master/README.md#Find-Docker-IP-Address)
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,26 +25,13 @@ class BaseController extends Controller
   }
 
   /**
-   * Send a response indicating failure of validation
-   * @param  array  $messages - messages to be sent
-   * @return array            - array containing messages, success, token and other data
+   * Get a validator
+   *
+   * @param  array  $data
+   * @return \Illuminate\Contracts\Validation\Validator
    */
-  public function sendValidationFailed($messages = array(), $add = array())
-	{
-		$out = [];
-		$out['messages'] = $messages;
-		$out['success'] = false;
-    $out['token'] = Session::get('_token');
-
-    if (!empty($add)) {
-    	$out = array_merge($out, $add);
-    }
-
-    if (Request::ajax()) {
-    	return $out;
-    }
-    else {
-      return Response::json($out);
-	  }
-	}
+  protected function validator(array $data, array $rules)
+  {
+      return Validator::make($data, $rules);
+  }
 }

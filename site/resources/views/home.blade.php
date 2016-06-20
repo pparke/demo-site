@@ -2,6 +2,9 @@
 
 @section('content')
 
+<!-- Navigation -->
+@include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links']])
+
 <!-- Header -->
 <header id="top" class="header">
  <div class="text-vertical-center">
@@ -39,52 +42,48 @@
            <div class="service-item">
              <span class="fa-stack fa-4x">
              <i class="fa fa-circle fa-stack-2x"></i>
-             <i class="fa fa-cloud fa-stack-1x text-blue"></i>
+             <i class="fa fa-database fa-stack-1x text-blue"></i>
            </span>
              <h4>
-               <strong>Skill Name</strong>
+               <strong>SQL + NoSQL</strong>
              </h4>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-             <a href="#" class="btn btn-square btn-light">Learn More</a>
+             <p>I'm comfortable working with both SQL and NoSQL databases and have specific experience designing, implementing, and utilizing databases in MySQL and MongoDB.</p>
            </div>
          </div>
          <div class="col-md-3 col-sm-6">
            <div class="service-item">
              <span class="fa-stack fa-4x">
              <i class="fa fa-circle fa-stack-2x"></i>
-             <i class="fa fa-compass fa-stack-1x text-blue"></i>
+             <i class="fa fa-terminal fa-stack-1x text-blue"></i>
            </span>
              <h4>
-               <strong>Skill Name</strong>
+               <strong>CLI Fluent</strong>
              </h4>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-             <a href="#" class="btn btn-square btn-light">Learn More</a>
+             <p>Whether it's writing a bash script to manage database migrations, working with the AWS CLI during deployment and troubleshooting, or testing new features I'm at home on the command line.</p>
            </div>
          </div>
          <div class="col-md-3 col-sm-6">
            <div class="service-item">
              <span class="fa-stack fa-4x">
              <i class="fa fa-circle fa-stack-2x"></i>
-             <i class="fa fa-flask fa-stack-1x text-blue"></i>
+             <i class="fa fa-desktop fa-stack-1x text-blue"></i>
            </span>
              <h4>
-               <strong>Skill Name</strong>
+               <strong>HTML/JS/CSS</strong>
              </h4>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-             <a href="#" class="btn btn-square btn-light">Learn More</a>
+             <p>I'm no stranger to front end development. I'm proficient in JavaScript, having used it both in the development of an API with Node.js, Express, and Mongoose ODM as well as with an Ember.js client used to interact with that API.  I know my way around a stylesheet, the latest HTML5 features, and several templating engines.</p>
            </div>
          </div>
          <div class="col-md-3 col-sm-6">
            <div class="service-item">
              <span class="fa-stack fa-4x">
              <i class="fa fa-circle fa-stack-2x"></i>
-             <i class="fa fa-shield fa-stack-1x text-blue"></i>
+             <i class="fa fa-gears fa-stack-1x text-blue"></i>
            </span>
              <h4>
-               <strong>Skill Name</strong>
+               <strong>REST</strong>
              </h4>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-             <a href="#" class="btn btn-square btn-light">Learn More</a>
+             <p>I have experience developing a RESTful API allowing users to create and manage content, interactions, and relationships.  I've implemented endpoints and services that handled text and photo storage, realtime notifications, retrieval of a feed, user action logging, comments, and account management.</p>
            </div>
          </div>
        </div>
@@ -100,7 +99,7 @@
 <!-- Callout -->
 <aside class="callout">
  <div class="text-vertical-center">
-   <h1>Vertically Centered Text</h1>
+   <h1>We can accomplish more together</h1>
  </div>
 </aside>
 
@@ -143,7 +142,7 @@
      <div class="col-lg-12 text-center">
        <h3>Feel free to take a look around.</h3>
        <a href="/blog" class="btn btn-lg btn-square btn-light">Blog</a>
-       <a href="#" class="btn btn-lg btn-square btn-dark">Notes</a>
+       <a href="#" class="btn btn-lg btn-square btn-dark">Links</a>
      </div>
    </div>
  </div>

@@ -1,4 +1,4 @@
-{{-- views/blog/show --}}
+{{-- views/blog/update --}}
 
 @extends('layouts.app')
 

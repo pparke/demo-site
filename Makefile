@@ -28,13 +28,9 @@ log:
 	@cd laradock && \
 	tail -f logs/nginx/error.log
 
-cc:
-	@cd laradock && \
-	docker-compose run --rm laradock_workspace_1 drush cc all
-
 restart:
 	@cd laradock && \
 	docker stop laradock_workspace_1 && \
 	docker-compose start workspace
 
-.PHONY: clean start stop status cli log cc restart
+.PHONY: clean start stop status cli log restart

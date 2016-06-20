@@ -1,4 +1,4 @@
-{{-- views/blog/show --}}
+{{-- views/link/update --}}
 
 @extends('layouts.app')
 
@@ -7,6 +7,6 @@
 <!-- Navigation -->
 @include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links']])
 
-@include('components.page_title', ['title' => 'Blog'])
+@include('components.page_title', ['title' => 'Links'])
 
 @endsection
