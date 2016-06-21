@@ -17,6 +17,12 @@
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- JS -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Site JS -->
+    <script src="/js/all.js"></script>
   </head>
 
   <body>
@@ -68,15 +74,6 @@
      </section>
     </footer>
 
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-
-    <!-- Site JS -->
-    <script src="/js/all.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="/js/bootstrap.min.js"></script>
 
     <script>
       $(document).ready(function () {

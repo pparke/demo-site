@@ -9,19 +9,32 @@
 
   @include('components.page_title', ['title' => 'Blog'])
 
+  <div class="segment bg-blue">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          @if (Auth::guest())
+          @else
+          @include('components.large_button', ['text' => 'Create Blog', 'icon' => 'plus', 'hint' => 'Create a new blog entry', 'href' => '/blogs/create'])
+          @endif
+        </div>
+      </div>
+    </div>
+  </div>
+
   {{-- Blog List --}}
   @if (count($blogs) > 0)
-    <div class="container">
+    <div class="container blog-list">
     @foreach ($blogs as $blog)
       <div class="row">
-        <div class="col-sm-4"><a href="#" class=""><img src="http://placehold.it/1280X720" class="img-responsive"></a>
-        </div>
-        <div class="col-sm-8">
-          <h3 class="title">{{ $blog->title }}</h3>
-          <p class="text-muted"><i class="fa fa-clock-o"></i> {{$blog->created_at}}</p>
-          <p>{{ $blog->sample }}</p>
+        <div class="col-sm-8 col-sm-push-2">
+          <a href="/blogs/{{ $blog->slug }}">
+            <h3 class="title">{{ $blog->title }}</h3>
+          </a>
+          <p class="text-muted date"><i class="fa fa-clock-o"></i> {{$blog->created}}</p>
+          <p class="sample">{{ $blog->sample }}</p>
 
-          <p class="text-muted">by <a href="#">{{ $blog->user->username }}</a></p>
+          <p class="text-muted author">by {{ $blog->user->username }}</p>
 
         </div>
       </div>

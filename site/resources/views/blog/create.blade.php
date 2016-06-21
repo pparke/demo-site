@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <form action="{{ url('blog') }}" method="POST" class="form-horizontal">
+        <form action="{{ url('blogs') }}" method="POST" class="form-horizontal">
           {{ csrf_field() }}
 
           {{-- Title --}}
@@ -22,7 +22,7 @@
             <label for="blog-title" class="col-sm-3 control-label light-label">Title</label>
 
             <div class="col-sm-6">
-              <input type="text" name="title" id="blog-title" class="form-control flat-input">
+              <input type="text" name="title" id="blog-title" class="form-control flat-input blog-title-input">
             </div>
           </div>
 
@@ -31,7 +31,7 @@
             <label for="blog-content" class="col-sm-3 control-label light-label">Content</label>
 
             <div class="col-sm-6">
-              <textarea type="text" name="content" id="blog-content" class="form-control flat-input" rows=10></textarea>
+              <textarea type="text" name="content" id="blog-content" class="form-control flat-input medium-editor-input" rows=10></textarea>
             </div>
           </div>
 
@@ -48,4 +48,14 @@
     </div>
   </div>
 </div>
+
+<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+<script>
+  var editor = new MediumEditor('#blog-content', {
+    toolbar: {
+      buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote', 'justifyLeft', 'justifyCenter', 'justifyRight'],
+    }
+  });
+</script>
 @endsection

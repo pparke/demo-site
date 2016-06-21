@@ -6,7 +6,7 @@
 @include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links']])
 
 <!-- Header -->
-<header id="top" class="header">
+<header id="top" class="header site-header">
  <div class="text-vertical-center">
    <h1>Philip Parke</h1>
    <h3>Backend Web Developer</h3>
@@ -113,14 +113,14 @@
        <div class="row">
          <div class="col-md-6">
            <div class="portfolio-item">
-             <a href="#">
+             <a href="https://rankopolis.com" target="_blank">
                <img class="img-portfolio img-responsive" src="img/rankopolis/rankopolis-logo.jpg">
              </a>
            </div>
          </div>
          <div class="col-md-6">
            <div class="portfolio-item">
-             <a href="#">
+             <a href="http://islandequineproducts.com/" target="_blank">
                <img class="img-portfolio img-responsive" src="img/iep/iep-logo.png">
              </a>
            </div>
@@ -141,8 +141,8 @@
    <div class="row">
      <div class="col-lg-12 text-center">
        <h3>Feel free to take a look around.</h3>
-       <a href="/blog" class="btn btn-lg btn-square btn-light">Blog</a>
-       <a href="#" class="btn btn-lg btn-square btn-dark">Links</a>
+       <a href="/blogs" class="btn btn-lg btn-square btn-light">Blog</a>
+       <a href="/links" class="btn btn-lg btn-square btn-dark">Links</a>
      </div>
    </div>
  </div>

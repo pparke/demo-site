@@ -18,7 +18,12 @@ class BlogController extends BaseController
   */
   public function index()
   {
-    $blogs = Blog::orderBy('created_at', 'asc')->get();
+    $blogs = Blog::orderBy('created_at', 'dsc')->get();
+
+    // add a created key containing a formatted date
+    $blogs = $blogs->each(function($b){
+      $b->created = $b->created_at->toFormattedDateString();
+    });
 
     return view('blog.index', [
       'blogs' => $blogs
@@ -49,10 +54,12 @@ class BlogController extends BaseController
     // create a new instance
     $request->user()->blogs()->create([
       'title' => $request->title,
-      'content' => $request->content,
+      'content' => strip_tags($request->content, Blog::$allowedTags),
       'slug' => str_slug($request->title),
-      'sample' => str_finish(implode(" ", array_slice(explode(" ", $request->content, 40), 0, -1)), "..."),
+      'sample' => str_finish(implode(" ", array_slice(explode(" ", strip_tags($request->content), 40), 0, -1)), "..."),
     ]);
+
+    return redirect()->route('blogs');
   }
 
 
@@ -118,5 +125,7 @@ class BlogController extends BaseController
     $blog = Blog::find($id);
 
     $blog->delete();
+
+    return redirect()->route('blogs');
   }
 }

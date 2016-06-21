@@ -17,8 +17,8 @@ class CreateBlogsTable extends Migration
             $table->integer('user_id')->references('id')->on('users');
             $table->string('title');
             $table->text('content');
-            $table->text('slug');
-            $table->string('sample');
+            $table->string('slug');
+            $table->text('sample');
             $table->timestamps();
         });
     }

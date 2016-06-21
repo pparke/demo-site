@@ -1,1 +1,53 @@
 // resources/assets/sass/blog.scss
+
+.blog-list {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  h3.title {
+    font-size: 2.6em;
+  }
+
+  p.sample {
+    font-size: 1.5em;
+  }
+
+  p.date {
+    font-size: 1.2em;
+  }
+
+  p.author {
+    font-size: 1.2em;
+  }
+}
+
+.blog-header {
+  h1 {
+    font-size: 4.3em;
+    font-weight: 300;
+  }
+}
+
+.blog-content {
+  padding-top: 40px;
+
+  p {
+    font-size: 1.4em;
+  }
+}
+
+.blog-title-input {
+  font-size: 1.4em;
+}
+
+.medium-editor-input {
+  height: 300px;
+  resize: both;
+  overflow-y: scroll;
+  font-size: 1.4em;
+}
+
+.blog-controls {
+  padding: 40px 0;
+  text-align: right;
+}

@@ -22,6 +22,12 @@ class Blog extends Model
 	);
 
   /**
+   * The allowed html tags for blog content
+   * @var string
+   */
+  public static $allowedTags = "<p><a><h2><h3><b><i><u><blockquote>";
+
+  /**
    * The user record that this blog belongs to
    */
   public function user()

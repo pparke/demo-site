@@ -1,17 +1,18 @@
-// close the navbar
-$("#menu-close").click(function(e) {
-  e.preventDefault();
-  $("#sidebar-wrapper").toggleClass("active");
-});
+$(document).ready(function(){
+  // close the navbar
+  $("#menu-close").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+  });
 
-// open the navbar
-$("#menu-toggle").click(function(e) {
-  e.preventDefault();
-  $("#sidebar-wrapper").toggleClass("active");
-});
+  // open the navbar
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    console.log('open menu')
+    $("#sidebar-wrapper").toggleClass("active");
+  });
 
-// scroll to menu item
-$(function() {
+  // scroll to menu item
   $("a[href*='#']:not([href='#'])").click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
       var target = $(this.hash);

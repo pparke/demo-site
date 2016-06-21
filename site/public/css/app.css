@@ -5787,6 +5787,10 @@ a {
     background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px rgba(0, 0, 0, 0.7); }
 
+.btn-jumbo {
+  padding: 20px 30px;
+  font-size: 1.7em; }
+
 /* HR */
 hr.small {
   max-width: 800px; }
@@ -5938,10 +5942,11 @@ footer {
   display: table;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100%; }
+
+.site-header {
   background: url(../img/lock.jpg) no-repeat center center scroll;
-  background-size: cover;
-  background-position-y: -346px; }
+  background-size: cover; }
 
 /* About */
 .about {
@@ -5984,6 +5989,40 @@ footer {
   .call-to-action .btn {
     margin: 10px; }
 
+.blog-list {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .blog-list h3.title {
+    font-size: 2.6em; }
+  .blog-list p.sample {
+    font-size: 1.5em; }
+  .blog-list p.date {
+    font-size: 1.2em; }
+  .blog-list p.author {
+    font-size: 1.2em; }
+
+.blog-header h1 {
+  font-size: 4.3em;
+  font-weight: 300; }
+
+.blog-content {
+  padding-top: 40px; }
+  .blog-content p {
+    font-size: 1.4em; }
+
+.blog-title-input {
+  font-size: 1.4em; }
+
+.medium-editor-input {
+  height: 300px;
+  resize: both;
+  overflow-y: scroll;
+  font-size: 1.4em; }
+
+.blog-controls {
+  padding: 40px 0;
+  text-align: right; }
+
 .text-vertical-center {
   display: table-cell;
   text-align: center;
@@ -6003,10 +6042,11 @@ footer {
   display: table;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100%; }
+
+.site-header {
   background: url(../img/lock.jpg) no-repeat center center scroll;
-  background-size: cover;
-  background-position-y: -346px; }
+  background-size: cover; }
 
 /* About */
 .about {
