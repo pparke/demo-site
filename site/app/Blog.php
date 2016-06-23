@@ -28,6 +28,18 @@ class Blog extends Model
   public static $allowedTags = "<p><a><h2><h3><b><i><u><blockquote>";
 
   /**
+   * Extract a sample from the beginning of the text, will remove all
+   * HTML tags
+   * @param  string $text       - the text from which to draw the sample
+   * @param  integer $num_words - (optional, default 40) the max number of words in the sample
+   * @return string             - the sampled text
+   */
+  public static function text_sample($text, $num_words = 40)
+  {
+    return str_finish(implode(" ", array_slice(explode(" ", strip_tags($text), $num_words), 0, -1)), "...");
+  }
+
+  /**
    * The user record that this blog belongs to
    */
   public function user()

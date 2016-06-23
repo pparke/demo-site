@@ -12,11 +12,19 @@ class BlogController extends BaseController
 {
 
   /**
+   * Instantiate a new BlogController instance.
+   */
+  public function __construct()
+  {
+    $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+  }
+
+  /**
   * Display a listing of the resource.
   *
   * @return \Illuminate\Http\Response
   */
-  public function index()
+  public function index(Request $request)
   {
     $blogs = Blog::orderBy('created_at', 'dsc')->get();
 
@@ -25,9 +33,14 @@ class BlogController extends BaseController
       $b->created = $b->created_at->toFormattedDateString();
     });
 
-    return view('blog.index', [
-      'blogs' => $blogs
-    ]);
+    if ($request->ajax()) {
+      return Response::json(['blogs' => $blogs]);
+    }
+    else {
+      return view('blog.index', [
+        'blogs' => $blogs
+      ]);
+    }
   }
 
   /**
@@ -52,14 +65,19 @@ class BlogController extends BaseController
     $this->validate($request, Blog::$createRules);
 
     // create a new instance
-    $request->user()->blogs()->create([
+    $blog = $request->user()->blogs()->create([
       'title' => $request->title,
       'content' => strip_tags($request->content, Blog::$allowedTags),
       'slug' => str_slug($request->title),
-      'sample' => str_finish(implode(" ", array_slice(explode(" ", strip_tags($request->content), 40), 0, -1)), "..."),
+      'sample' => Blog::text_sample($request->content),
     ]);
 
-    return redirect()->route('blogs');
+    if ($request->ajax()) {
+      return Response::json(['blog' => $blog]);
+    }
+    else {
+      return redirect()->route('blogs.index');
+    }
   }
 
 
@@ -112,6 +130,13 @@ class BlogController extends BaseController
     $blog->sample = str_finish(implode(" ", array_slice(explode(" ", $request->content, 40), 0, -1)), "...");
 
     $blog->save();
+
+    if ($request->ajax()) {
+      return Response::json(['blog' => $blog]);
+    }
+    else {
+      return redirect()->route('blogs.show', [$id]);
+    }
   }
 
   /**
@@ -120,12 +145,17 @@ class BlogController extends BaseController
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
+  public function destroy(Request $request, $id)
   {
     $blog = Blog::find($id);
 
     $blog->delete();
 
-    return redirect()->route('blogs');
+    if ($request->ajax()) {
+      return Response::json([], 200);
+    }
+    else {
+      return redirect()->route('blogs.index');
+    }
   }
 }

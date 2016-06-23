@@ -30,16 +30,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('/home', 'HomeController@index');
 
 // Blog Routes
-Route::post('/blogs', 'BlogController@store')->middleware('auth');
-Route::get('/blogs', 'BlogController@index')->name('blogs');
-Route::get('/blogs/create', 'BlogController@create');
-Route::get('/blogs/{slug}', 'BlogController@show');
-Route::post('/blogs/{slug}', 'BlogController@update')->middleware('auth');
-Route::delete('/blogs/{id}', 'BlogController@destroy')->middleware('auth');
+Route::resource('blogs', 'BlogController');
 
 // Link Routes
-Route::post('/links', 'LinkController@store')->middleware('auth');
-Route::get('/links', 'LinkController@index')->name('links');
-Route::get('/links/create', 'LinkController@create');
-Route::post('/links/{id}', 'LinkController@update')->middleware('auth');
-Route::delete('/links/{blog}', 'LinkController@destroy')->middleware('auth');
+Route::resource('links', 'LinkController');

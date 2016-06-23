@@ -42,6 +42,12 @@
     @endforeach
     </div>
   @else
-    <h1 class="text-center text-muted text-large">Sorry, nothing here yet</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center full-page">
+        <h1 class="text-center text-muted text-large">Sorry, nothing here yet</h1>
+      </div>
+    </div>
+  </div>
   @endif
 @endsection

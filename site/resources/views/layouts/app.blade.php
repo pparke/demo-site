@@ -61,10 +61,10 @@
             <div class="col-lg-10 col-lg-offset-1 text-center">
              <ul class="list-inline">
                <li>
-                 <a href="https://github.com/pparke"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                 <a href="https://github.com/pparke" target="_blank"><i class="fa fa-github fa-fw fa-3x"></i></a>
                </li>
                <li>
-                 <a href="https://twitter.com/parkenaut"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                 <a href="https://twitter.com/parkenaut" target="_blank"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                </li>
              </ul>
              <p class="text-muted">Copyright &copy; Philip Parke 2016</p>

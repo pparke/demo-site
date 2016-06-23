@@ -13,8 +13,8 @@ class CreateLinkTagTable extends Migration
     public function up()
     {
       Schema::create('link_tag', function (Blueprint $table) {
-        $table->integer('link_id')->references('id')->on('links');
-        $table->integer('tag_id')->references('id')->on('tags');
+        $table->foreign('link_id')->references('id')->on('links');
+        $table->foreign('tag_id')->references('id')->on('tags');
       });
     }
 

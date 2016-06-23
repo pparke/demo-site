@@ -11,11 +11,31 @@
 |
 */
 
+/**
+ * User Factory
+ */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'username' => $faker->userName,
         'email' => $faker->safeEmail,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+/**
+ * Blog Factory
+ */
+$factory->define(App\Blog::class, function (Faker\Generator $faker) {
+  $title = $faker->sentence(4, true);
+  $content = $faker->text(1000);
+    return [
+      'user_id' => function () {
+          return factory(App\User::class)->create()->id;
+        },
+      'title' => $title,
+      'content' => $content,
+      'slug' => str_slug($title),
+      'sample' => App\Blog::text_sample($content),
     ];
 });
