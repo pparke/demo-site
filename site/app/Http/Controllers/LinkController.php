@@ -7,6 +7,7 @@ use App\Link;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\BaseController;
+use Illuminate\Http\Response;
 
 class LinkController extends BaseController
 {
@@ -26,11 +27,16 @@ class LinkController extends BaseController
    */
   public function index()
   {
-    $links = Link::orderBy('created_at', 'asc')->get();
+    $links = Link::orderBy('created_at', 'dsc')->get();
 
-    return view('link.index', [
-      'links' => $links
-    ]);
+    if ($request->ajax()) {
+      return response()->json(['links' => $links]);
+    }
+    else {
+      return view('link.index', [
+        'links' => $links
+      ]);
+    }
   }
 
   /**
@@ -55,11 +61,18 @@ class LinkController extends BaseController
     $this->validate($request, Link::$createRules);
 
     // create a new instance
-    $request->user()->links()->create([
-      'title' => $request->title,
-      'url' => $request->url,
-      'tags' => $request->tags,
+    $link = $request->user()->links()->create([
+      'title' => $request->input('title'),
+      'url' => $request->input('url'),
+      'tags' => $request->input('tags'),
     ]);
+
+    if ($request->ajax()) {
+      return response()->json(['link' => $link]);
+    }
+    else {
+      return redirect()->route('links.index');
+    }
   }
 
 
@@ -89,11 +102,18 @@ class LinkController extends BaseController
   {
     $link = Link::find($id);
 
-    $link->title = $request->title;
-    $link->url = $request->url;
-    $link->tags = $request->tags;
+    $link->title = $request->input('title');
+    $link->url = $request->input('url');
+    $link->tags = $request->input('tags');
 
     $link->save();
+
+    if ($request->ajax()) {
+      return response()->json(['link' => $link]);
+    }
+    else {
+      return redirect()->route('links.index');
+    }
   }
 
   /**
@@ -107,5 +127,12 @@ class LinkController extends BaseController
     $link = Link::find($id);
 
     $link->delete();
+
+    if ($request->ajax()) {
+      return response()->json([], 200);
+    }
+    else {
+      return redirect()->route('links.index');
+    }
   }
 }

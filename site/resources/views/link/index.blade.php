@@ -9,6 +9,19 @@
 
 @include('components.page_title', ['title' => 'Links'])
 
+<div class="segment bg-forest-green">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        @if (Auth::guest())
+        @else
+        @include('components.large_button', ['text' => 'Add Link', 'icon' => 'plus', 'hint' => 'Add a new link', 'href' => '/links/create'])
+        @endif
+      </div>
+    </div>
+  </div>
+</div>
+
 {{-- Link List --}}
 @if (count($links) > 0)
   <div class="container">

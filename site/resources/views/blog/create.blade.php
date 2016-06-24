@@ -5,7 +5,7 @@
 @section('content')
 
 <!-- Navigation -->
-@include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links']])
+@include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links'], 'backhref' => '/blogs'])
 
 @include('components.page_title', ['title' => 'Blog'])
 
@@ -30,7 +30,7 @@
           <div class="form-group row">
             <label for="blog-content" class="col-sm-3 control-label light-label">Content</label>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 medium-editor-container">
               <textarea type="text" name="content" id="blog-content" class="form-control flat-input medium-editor-input" rows=10></textarea>
             </div>
           </div>

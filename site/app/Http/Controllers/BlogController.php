@@ -7,6 +7,7 @@ use App\Blog;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController;
+use Illuminate\Http\Response;
 
 class BlogController extends BaseController
 {
@@ -34,7 +35,7 @@ class BlogController extends BaseController
     });
 
     if ($request->ajax()) {
-      return Response::json(['blogs' => $blogs]);
+      return response()->json(['blogs' => $blogs]);
     }
     else {
       return view('blog.index', [
@@ -66,14 +67,14 @@ class BlogController extends BaseController
 
     // create a new instance
     $blog = $request->user()->blogs()->create([
-      'title' => $request->title,
-      'content' => strip_tags($request->content, Blog::$allowedTags),
-      'slug' => str_slug($request->title),
-      'sample' => Blog::text_sample($request->content),
+      'title' => $request->input('title'),
+      'content' => strip_tags($request->input('content'), Blog::$allowedTags),
+      'slug' => str_slug($request->input('title')),
+      'sample' => Blog::text_sample($request->input('content')),
     ]);
 
     if ($request->ajax()) {
-      return Response::json(['blog' => $blog]);
+      return response()->json(['blog' => $blog]);
     }
     else {
       return redirect()->route('blogs.index');
@@ -89,7 +90,7 @@ class BlogController extends BaseController
    */
   public function show($slug)
   {
-    // find the user with the given id
+    // find the blog with the given slug
     $blog = Blog::findBySlug($slug);
 
     return view('blog.show', [
@@ -124,18 +125,18 @@ class BlogController extends BaseController
   {
     $blog = Blog::find($id);
 
-    $blog->title = $request->title;
-    $blog->content = $request->content;
-    $blog->slug = str_slug($request->title);
-    $blog->sample = str_finish(implode(" ", array_slice(explode(" ", $request->content, 40), 0, -1)), "...");
+    $blog->title = $request->input('title');
+    $blog->content = $request->input('content');
+    $blog->slug = str_slug($request->input('title'));
+    $blog->sample = Blog::text_sample($request->input('content'));
 
     $blog->save();
 
     if ($request->ajax()) {
-      return Response::json(['blog' => $blog]);
+      return response()->json(['blog' => $blog]);
     }
     else {
-      return redirect()->route('blogs.show', [$id]);
+      return redirect()->route('blogs.show', [$blog->slug]);
     }
   }
 
@@ -148,11 +149,10 @@ class BlogController extends BaseController
   public function destroy(Request $request, $id)
   {
     $blog = Blog::find($id);
-
     $blog->delete();
 
     if ($request->ajax()) {
-      return Response::json([], 200);
+      return response()->json([], 200);
     }
     else {
       return redirect()->route('blogs.index');

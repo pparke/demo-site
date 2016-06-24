@@ -38,22 +38,6 @@ a {
   }
 }
 
-.btn-menu {
-  color: #fff;
-  background-color: rgba(0,0,0,0.4);
-  border-radius: 0;
-  padding: 10px 20px 10px 20px;
-  transition: background-color .3s ease-out;
-  box-shadow: none;
-  &:hover,
-  &:focus,
-  &:active {
-    outline: none;
-    color: #fff;
-    background-solor: rgba(0,0,0,0.5);
-  }
-}
-
 .btn-dark {
   color: #fff;
   background-color: rgba(0,0,0,0.4);
@@ -115,9 +99,34 @@ hr.small {
   background-color: #564E58;
 }
 
+.bg-light-purple {
+  color: #fff;
+  background-color: #4E0250;
+}
+
 .bg-blue {
   color: #fff;
   background-color: #19557F;
+}
+
+.bg-light-blue {
+  color: #fff;
+  background-color: #99D5C9;
+}
+
+.bg-red {
+  color: #fff;
+  background-color: #BB4430;
+}
+
+.bg-forest-green {
+  color: #fff;
+  background-color: #3E5641;
+}
+
+.bg-yellow {
+  color: #fff;
+  background-color: #DB8E00;
 }
 
 .text-blue {

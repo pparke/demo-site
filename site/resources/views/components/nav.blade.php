@@ -3,9 +3,18 @@
 <a id="menu-toggle" href="#" class="btn btn-menu btn-lg toggle"><i class="fa fa-bars"></i></a>
 <nav id="sidebar-wrapper">
   <ul class="sidebar-nav">
-    <a id="menu-close" href="#" class="btn btn-menu btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+    {{-- Close Button --}}
+    <a id="menu-close" href="#" class="btn btn-menu btn-lg pull-right toggle">
+      <i class="fa fa-times"></i>
+    </a>
+    {{-- Back Button --}}
+    @if(!empty($backhref))
+    <a class="btn btn-lg btn-menu btn-back pull-right" aria-label="back" href="{{ $backhref }}">
+      <i class="fa fa-chevron-left"></i>
+    </a>
+    @endif
     <li class="sidebar-brand">
-      <a href="#top"  onclick = $("#menu-close").click(); >Menu</a>
+      <a href="#top"  onclick = $("#menu-close").click(); >Top</a>
     </li>
     @foreach($items as $name => $href)
     <li>
