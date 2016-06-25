@@ -11,7 +11,7 @@ class Tag extends Model
    * The attributes that are mass assignable.
    */
   protected $fillable = [
-    'title', 'color', 'description',
+    'title',
   ];
 
   /**
@@ -19,8 +19,6 @@ class Tag extends Model
    */
   public static $createRules = array(
 		'title' => 'required|min:1|max:255',
-		'color' => 'required|min:1|max:32',
-    'description' => 'required|min:1|max:255'
 	);
 
   /**

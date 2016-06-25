@@ -24,11 +24,20 @@
 
 {{-- Link List --}}
 @if (count($links) > 0)
-  <div class="container">
-  @foreach ($links as $link)
-
-  @endforeach
+<div class="container">
+  <div class="card-group">
+    @foreach ($links as $link)
+    <div class="card">
+      <img class="card-img-top" data-src="{{ $link->image }}" alt="{{ $link->title }}">
+      <div class="card-block">
+        <h4 class="card-title">{{ $link->title }}</h4>
+        <p class="card-text">{{ $link->description }}</p>
+        <p class="card-text"><small class="text-muted">{{ $link->created }}</small></p>
+      </div>
+    </div>
+    @endforeach
   </div>
+</div>
 @else
   <h1 class="text-center text-muted text-large">Sorry, nothing here yet</h1>
 @endif

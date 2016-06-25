@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Link;
+use App\Tag;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -25,9 +26,14 @@ class LinkController extends BaseController
    *
    * @return \Illuminate\Http\Response
    */
-  public function index()
+  public function index(Request $request)
   {
     $links = Link::orderBy('created_at', 'dsc')->get();
+
+    // add a created key containing a formatted date
+    $links = $links->each(function($l){
+      $l->created = $l->created_at->toFormattedDateString();
+    });
 
     if ($request->ajax()) {
       return response()->json(['links' => $links]);
@@ -60,12 +66,30 @@ class LinkController extends BaseController
     // validate the request according to the rules defined on the model
     $this->validate($request, Link::$createRules);
 
+    // use embedly to scrape the page
+    $result = Link::embedly($request->input('url'));
+
+
     // create a new instance
     $link = $request->user()->links()->create([
       'title' => $request->input('title'),
-      'url' => $request->input('url'),
-      'tags' => $request->input('tags'),
+      'url' => $result->url,
+      'image' => $result->images[0]->url,
+      'description' => $result->description,
     ]);
+
+    // transform tags string into array
+    $tag_titles = explode(' ', strtolower(strip_tags($request->tags)));
+
+    // create tags
+    if ($tag_titles) {
+      $tags = array_map(function ($tag) {
+        return Tag::firstOrCreate(['title' => $tag]);
+      }, $tag_titles);
+
+      // create the relationships between the link and the tags
+      $link->tags()->attach($tags);
+    }
 
     if ($request->ajax()) {
       return response()->json(['link' => $link]);
@@ -104,7 +128,6 @@ class LinkController extends BaseController
 
     $link->title = $request->input('title');
     $link->url = $request->input('url');
-    $link->tags = $request->input('tags');
 
     $link->save();
 
@@ -122,7 +145,7 @@ class LinkController extends BaseController
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
+  public function destroy(Request $request, $id)
   {
     $link = Link::find($id);
 

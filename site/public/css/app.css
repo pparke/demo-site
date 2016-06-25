@@ -6072,6 +6072,30 @@ footer {
   font-size: 4.3em;
   font-weight: 300; }
 
+/* links.scss */
+.link-tags-container {
+  width: 100%;
+  background-color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  cursor: text; }
+  .link-tags-container input.tag-input {
+    color: #555;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: auto;
+    margin: 0;
+    padding: 7px;
+    font-size: 14px; }
+  .link-tags-container span.tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 7px;
+    font-size: 14px; }
+
 .text-vertical-center {
   display: table-cell;
   text-align: center;

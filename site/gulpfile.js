@@ -12,10 +12,7 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-  bootstrapPath = 'node_modules/bootstrap-sass/assets';
   mix.sass(['app.scss', 'home.scss'])
   .scripts(['navbar.js', 'trilobyte.js', 'colors.js'])
-  .copy(bootstrapPath + '/fonts', 'public/fonts')
-  .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js')
   .copy('node_modules/whatwg-fetch/fetch.js', 'public/js');
 });

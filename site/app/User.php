@@ -27,4 +27,12 @@ class User extends Authenticatable
   {
     return $this->hasMany(Blog::class);
   }
+
+  /**
+   * The links that belong to the user
+   */
+  public function links()
+  {
+    return $this->hasMany(Link::class);
+  }
 }

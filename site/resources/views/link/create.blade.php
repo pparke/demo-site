@@ -35,6 +35,18 @@
             </div>
           </div>
 
+          {{-- Tags --}}
+          <div class="form-group row">
+            <label for="link-tags" class="col-sm-3 control-label light-label">Tags</label>
+
+            <div class="col-sm-6">
+              <div id="tag-display" class="link-tags-container">
+                <input type="text" id="new-tag" class="tag-input">
+              </div>
+              <input id="link-tags" type="text" name="tags" value="" class="hidden">
+            </div>
+          </div>
+
           {{-- Create Button --}}
           <div class="form-group row">
             <div class="col-sm-offset-3 col-sm-6">
@@ -48,5 +60,38 @@
     </div>
   </div>
 </div>
+
+<script>
+  // focus the input when the user clicks on the tag-display element
+  // to simulate textarea behaviour
+  $('#tag-display').click(function() {
+       $('#new-tag').focus();
+  });
+
+  (function() {
+    var tags = [];
+    $('#new-tag').keyup(function(e) {
+      // spacebar pressed
+      if (e.which === 32) {
+        var val = $(this).val();
+
+        var wrapped = '<span class="tag label label-info">' + val + '</span>';
+
+        $(this).before(wrapped).val('');
+        tags.push(val);
+        $('#link-tags').val(tags.join(' '));
+      }
+      // backspace
+      else if (e.which === 8) {
+        if ($(this).val() === '') {
+          var tag = tags.pop();
+          $(this).siblings(':contains('+tag+')').remove();
+          $('#link-tags').val(tags.join(' '));
+        }
+      }
+    });
+  })();
+
+</script>
 
 @endsection
