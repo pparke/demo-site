@@ -65,7 +65,7 @@ class LinkController extends BaseController
   {
     // validate the request according to the rules defined on the model
     $this->validate($request, Link::$createRules);
-
+    
     // use embedly to scrape the page
     $result = Link::embedly($request->input('url'));
 
@@ -84,7 +84,7 @@ class LinkController extends BaseController
     // create tags
     if ($tag_titles) {
       $tags = array_map(function ($tag) {
-        return Tag::firstOrCreate(['title' => $tag]);
+        return Tag::firstOrCreate(['title' => $tag])->id;
       }, $tag_titles);
 
       // create the relationships between the link and the tags

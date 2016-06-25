@@ -6096,6 +6096,32 @@ footer {
     padding: 7px;
     font-size: 14px; }
 
+.link-list {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
+.link-card {
+  text-align: center; }
+  .link-card a {
+    text-decoration: none; }
+  .link-card img {
+    max-width: 100%; }
+  .link-card h3.title {
+    font-size: 2.6em; }
+  .link-card p.description {
+    font-size: 1.5em; }
+  .link-card p.date {
+    font-size: 1.2em; }
+  .link-card p.author {
+    font-size: 1.2em; }
+  .link-card .tags {
+    padding: 12px; }
+    .link-card .tags span.tag {
+      display: inline-block;
+      margin: 5px;
+      padding: 7px;
+      font-size: 14px; }
+
 .text-vertical-center {
   display: table-cell;
   text-align: center;

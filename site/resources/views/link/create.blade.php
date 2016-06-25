@@ -73,7 +73,7 @@
     $('#new-tag').keyup(function(e) {
       // spacebar pressed
       if (e.which === 32) {
-        var val = $(this).val();
+        var val = $(this).val().trim();
 
         var wrapped = '<span class="tag label label-info">' + val + '</span>';
 

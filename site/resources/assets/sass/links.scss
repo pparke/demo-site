@@ -28,3 +28,47 @@
     font-size: 14px;
   }
 }
+
+.link-list {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.link-card {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h3.title {
+    font-size: 2.6em;
+  }
+
+  p.description {
+    font-size: 1.5em;
+  }
+
+  p.date {
+    font-size: 1.2em;
+  }
+
+  p.author {
+    font-size: 1.2em;
+  }
+
+  .tags {
+    padding: 12px;
+    
+    span.tag {
+      display: inline-block;
+      margin: 5px;
+      padding: 7px;
+      font-size: 14px;
+    }
+  }
+}

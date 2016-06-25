@@ -25,14 +25,25 @@
 {{-- Link List --}}
 @if (count($links) > 0)
 <div class="container">
-  <div class="card-group">
+  <div class="card-group link-list">
     @foreach ($links as $link)
-    <div class="card">
-      <img class="card-img-top" data-src="{{ $link->image }}" alt="{{ $link->title }}">
+    <div class="card link-card">
+      <a href="{{ $link->url }}" target="_blank">
+        <img class="card-img-top" src="{{ $link->image }}" alt="{{ $link->title }}">
+      </a>
       <div class="card-block">
-        <h4 class="card-title">{{ $link->title }}</h4>
-        <p class="card-text">{{ $link->description }}</p>
-        <p class="card-text"><small class="text-muted">{{ $link->created }}</small></p>
+        <a href="{{ $link->url }}" target="_blank">
+          <h3 class="card-title title">{{ $link->title }}</h3>
+        </a>
+        <p class="card-text date"><small class="text-muted">{{ $link->created }}</small></p>
+        <p class="card-text description">{{ $link->description }}</p>
+        <p class="text-muted author">posted by {{ $link->user->username }}</p>
+        <div class="tags">
+          @foreach ($link->tags as $tag)
+            <span class="tag label label-info">{{ $tag->title }}</span>
+          @endforeach
+          {{ $link->tags }}
+        </div>
       </div>
     </div>
     @endforeach
