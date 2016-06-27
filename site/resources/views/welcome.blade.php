@@ -65,19 +65,24 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+  // set the background of the welcome page
+  // according to what time it is
   var hour = new Date().getHours();
   if (hour >= 5 && hour < 10) {
     $('#welcome').addClass('morning');
   }
-  else if (hour >= 10 && hour < 7) {
+  else if (hour >= 10 && hour < 19) {
     $('#welcome').addClass('day');
   }
-  else if (hour >= 7 && hour < 5) {
+  else if (hour >= 19 || hour < 5) {
     $('#welcome').addClass('evening');
   }
   tick();
 });
 
+/**
+ * Update the time display each minute
+ */
 function tick() {
   var now = new Date();
   var hours = now.getHours() === 0 ? 12 : (now.getHours() % 12);

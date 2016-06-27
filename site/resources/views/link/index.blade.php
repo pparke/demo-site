@@ -28,9 +28,11 @@
   <div class="card-group link-list">
     @foreach ($links as $link)
     <div class="card link-card">
+      @if ($link->image)
       <a href="{{ $link->url }}" target="_blank">
         <img class="card-img-top" src="{{ $link->image }}" alt="{{ $link->title }}">
       </a>
+      @endif
       <div class="card-block">
         <a href="{{ $link->url }}" target="_blank">
           <h3 class="card-title title">{{ $link->title }}</h3>
