@@ -2,6 +2,14 @@
 
 Using [LaraDock](https://github.com/LaraDock/laradock)
 
+## Requirements
+| Linux         | Windows & Mac |
+| ------------- | ------------- |
+| [Laravel](https://laravel.com/docs/master/installation) | [Laravel](https://laravel.com/docs/master/installation) |
+| [Git](https://git-scm.com/downloads)  | [Git](https://git-scm.com/downloads) |
+| [Docker Engine](https://docs.docker.com/engine/installation/linux/ubuntulinux)  |  [Docker Toolbox](https://www.docker.com/toolbox)  |
+| [Docker Compose](https://docs.docker.com/compose/install) |  |
+
 ## Installation
 Clone this repository
 ```
@@ -18,7 +26,7 @@ make start
 ```
 *Note: you may need to use sudo depending on how you installed Docker*
 
-**or** run the containers manually
+or run the containers manually
 ```
 cd laradock && docker-compose up -d nginx postgres
 ```
@@ -36,9 +44,7 @@ cd laradock && docker exec -it {Workspace-Container-Name} bash
 4) Setup the Laravel configuration file by copying the ```.env.example``` file to ```.env``` in the ```site``` directory and set the ```DB_HOST``` to your Docker IP
 [How to find my Docker IP address](https://github.com/LaraDock/laradock/blob/master/README.md#Find-Docker-IP-Address)
 
-5) You will need to also run ```npm install``` ```composer update```  ```composer install``` ```php artisan key:generate``` and ```php artisan migrate``` from within the workspace container to install the needed dependencies
-
-6) You should now restart the workspace container if you have it running by using
+5) You should now restart the workspace container if you have it running by using
 ```
 make restart
 ```
@@ -46,6 +52,8 @@ or
 ```
 cd laradock && docker stop {Workspace-Container-Name} && docker-compose start workspace
 ```
+
+6) You will need to also run ```npm install``` ```composer update```  ```composer install``` ```php artisan key:generate``` and ```php artisan migrate``` from within the workspace container to install the needed dependencies
 
 7) You may now view the site by opening your browser and visiting your Docker IP address, you may also wish to configure your hosts file to assign an easy to remember name such as laravel.dev or docker.dev
 
