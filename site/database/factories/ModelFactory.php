@@ -39,3 +39,22 @@ $factory->define(App\Blog::class, function (Faker\Generator $faker) {
       'sample' => App\Blog::text_sample($content),
     ];
 });
+
+/**
+ * Link Factory
+ */
+$factory->define(App\Link::class, function (Faker\Generator $faker) {
+  $title = $faker->sentence(4, true);
+  $description = $faker->paragraph();
+  $image = $faker->url;
+  $url = $faker->url;
+    return [
+      'user_id' => function () {
+          return factory(App\User::class)->create()->id;
+        },
+      'title' => $title,
+      'description' => $description,
+      'image' => $image,
+      'url' => $url,
+    ];
+});
