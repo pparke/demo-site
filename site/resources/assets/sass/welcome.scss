@@ -1,0 +1,142 @@
+/* sass/welcome */
+
+.welcome-header {
+  background: url(../img/dawn.jpg) no-repeat center center scroll;
+  background-size: cover;
+  font-size: 60px;
+  h1,h2,h3,h4 {
+    color: #fff;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  .time {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
+}
+
+/* ----------- Phones ----------- */
+@media
+  (max-width: 600px) {
+    .welcome-header {
+      &.morning {
+        background: url(../img/dawn_800.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.day {
+        background: url(../img/day_800.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.evening {
+        background: url(../img/night_800.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      color: #fff;
+      font-size: 32px;
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
+@media
+  (max-width: 800px)
+  and (min-width: 600px) {
+    .welcome-header {
+      &.morning {
+        background: url(../img/dawn_800.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.day {
+        background: url(../img/day_800.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.evening {
+        background: url(../img/night_800.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+    }
+  }
+
+/* ----------- Tablets ----------- */
+/* Portrait and Landscape */
+@media
+  (min-width: 800px)
+  and (max-width: 1280px) {
+    .welcome-header {
+      &.morning {
+        background: url(../img/dawn_1280.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.day {
+        background: url(../img/day_1280.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.evening {
+        background: url(../img/night_1280.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+    }
+  }
+
+/* ----------- Non-Retina Screens ----------- */
+@media
+  (min-width: 1200px)
+  and (max-width: 1600px) {
+    .welcome-header {
+      &.morning {
+        background: url(../img/dawn_1600.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.day {
+        background: url(../img/day_1600.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.evening {
+        background: url(../img/night_1600.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+    }
+  }
+
+/* ----------- Retina Screens ----------- */
+@media
+  (min-width: 1200px)
+  and (max-width: 1600px)
+  and (min-resolution: 192dpi) {
+    .welcome-header {
+      &.morning {
+        background: url(../img/dawn_3200.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.day {
+        background: url(../img/day_3200.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.evening {
+        background: url(../img/night_3200.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+    }
+  }
+
+/* ----------- Larger Screens ----------- */
+@media
+  (min-width: 1600px) {
+    .welcome-header {
+      &.morning {
+        background: url(../img/dawn_3200.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.day {
+        background: url(../img/day_3200.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+      &.evening {
+        background: url(../img/night_3200.jpg) no-repeat center center scroll;
+        background-size: cover;
+      }
+    }
+  }

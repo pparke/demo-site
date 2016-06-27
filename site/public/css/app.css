@@ -5748,6 +5748,13 @@ a {
 .full-page {
   height: 100%; }
 
+/* Header */
+.header {
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
 /* Buttons */
 .btn-square {
   border-radius: 0;
@@ -5883,6 +5890,96 @@ footer {
   padding: 10px 0;
   background-color: #0B0C0B; }
 
+/* sass/welcome */
+.welcome-header {
+  background: url(../img/dawn.jpg) no-repeat center center scroll;
+  background-size: cover;
+  font-size: 60px; }
+  .welcome-header h1, .welcome-header h2, .welcome-header h3, .welcome-header h4 {
+    color: #fff; }
+  .welcome-header h3 {
+    font-size: 32px; }
+  .welcome-header .time {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; }
+
+/* ----------- Phones ----------- */
+@media (max-width: 600px) {
+  .welcome-header {
+    color: #fff;
+    font-size: 32px; }
+    .welcome-header.morning {
+      background: url(../img/dawn_800.jpg) no-repeat center center scroll;
+      background-size: cover; }
+    .welcome-header.day {
+      background: url(../img/day_800.jpg) no-repeat center center scroll;
+      background-size: cover; }
+    .welcome-header.evening {
+      background: url(../img/night_800.jpg) no-repeat center center scroll;
+      background-size: cover; }
+    .welcome-header h3 {
+      font-size: 24px; } }
+
+@media (max-width: 800px) and (min-width: 600px) {
+  .welcome-header.morning {
+    background: url(../img/dawn_800.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.day {
+    background: url(../img/day_800.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.evening {
+    background: url(../img/night_800.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Tablets ----------- */
+/* Portrait and Landscape */
+@media (min-width: 800px) and (max-width: 1280px) {
+  .welcome-header.morning {
+    background: url(../img/dawn_1280.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.day {
+    background: url(../img/day_1280.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.evening {
+    background: url(../img/night_1280.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Non-Retina Screens ----------- */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .welcome-header.morning {
+    background: url(../img/dawn_1600.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.day {
+    background: url(../img/day_1600.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.evening {
+    background: url(../img/night_1600.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Retina Screens ----------- */
+@media (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) {
+  .welcome-header.morning {
+    background: url(../img/dawn_3200.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.day {
+    background: url(../img/day_3200.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.evening {
+    background: url(../img/night_3200.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Larger Screens ----------- */
+@media (min-width: 1600px) {
+  .welcome-header.morning {
+    background: url(../img/dawn_3200.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.day {
+    background: url(../img/day_3200.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .welcome-header.evening {
+    background: url(../img/night_3200.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
 /* Side Menu */
 #sidebar-wrapper {
   z-index: 1000;
@@ -5970,27 +6067,10 @@ footer {
 .toggle {
   margin: 5px 5px 0 0; }
 
-/* Header */
-.header {
-  display: table;
-  position: relative;
-  width: 100%;
-  height: 100%; }
-
+/* Site Header */
 .site-header {
   background: url(../img/lock_2.jpg) no-repeat center center scroll;
   background-size: cover; }
-
-/* About */
-.about {
-  padding: 50px 0; }
-
-/* Services */
-.services {
-  padding: 50px 0; }
-
-.service-item {
-  margin-bottom: 30px; }
 
 /* Callout */
 .callout {
@@ -6003,6 +6083,63 @@ footer {
     color: #f3f1eb;
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.3); }
+
+/* ----------- Phones ----------- */
+@media (max-device-width: 800px) {
+  .site-header {
+    background: url(../img/lock_2_800.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard_800.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Tablets ----------- */
+/* Portrait and Landscape */
+@media (min-device-width: 800px) and (max-device-width: 1280px) {
+  .site-header {
+    background: url(../img/lock_2_1280.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard_1280.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .site-header {
+    background: url(../img/lock_2_1600.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard_1600.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .site-header {
+    background: url(../img/lock_2.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Larger Screens ----------- */
+@media screen and (min-device-width: 1600px) {
+  .site-header {
+    background: url(../img/lock_2.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* About */
+.about {
+  padding: 50px 0; }
+
+/* Services */
+.services {
+  padding: 50px 0; }
+
+.service-item {
+  margin-bottom: 30px; }
 
 /* Portfolio */
 .portfolio {
@@ -6122,6 +6259,52 @@ footer {
       padding: 7px;
       font-size: 14px; }
 
+.notification-container {
+  position: fixed;
+  top: 55px;
+  right: 5px;
+  z-index: 998; }
+
+.notification {
+  width: 350px;
+  z-index: 999;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  margin-top: 5px;
+  opacity: 1;
+  transition: opacity 1s linear; }
+  .notification.clear {
+    opacity: 0; }
+  .notification .icon-container {
+    -ms-flex: 1;
+    flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-width: 55px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center; }
+    .notification .icon-container i {
+      color: #fff; }
+  .notification .text-container {
+    -ms-flex-positive: 3;
+    flex-grow: 3;
+    padding: 10px; }
+    .notification .text-container h4 {
+      font-weight: bold;
+      color: #222;
+      font-size: 17px;
+      margin-top: 5px; }
+    .notification .text-container p {
+      color: #222;
+      font-size: 14px; }
+
 .text-vertical-center {
   display: table-cell;
   text-align: center;
@@ -6136,27 +6319,10 @@ footer {
 .toggle {
   margin: 5px 5px 0 0; }
 
-/* Header */
-.header {
-  display: table;
-  position: relative;
-  width: 100%;
-  height: 100%; }
-
+/* Site Header */
 .site-header {
   background: url(../img/lock_2.jpg) no-repeat center center scroll;
   background-size: cover; }
-
-/* About */
-.about {
-  padding: 50px 0; }
-
-/* Services */
-.services {
-  padding: 50px 0; }
-
-.service-item {
-  margin-bottom: 30px; }
 
 /* Callout */
 .callout {
@@ -6169,6 +6335,63 @@ footer {
     color: #f3f1eb;
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.3); }
+
+/* ----------- Phones ----------- */
+@media (max-device-width: 800px) {
+  .site-header {
+    background: url(../img/lock_2_800.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard_800.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Tablets ----------- */
+/* Portrait and Landscape */
+@media (min-device-width: 800px) and (max-device-width: 1280px) {
+  .site-header {
+    background: url(../img/lock_2_1280.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard_1280.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .site-header {
+    background: url(../img/lock_2_1600.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard_1600.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .site-header {
+    background: url(../img/lock_2.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* ----------- Larger Screens ----------- */
+@media screen and (min-device-width: 1600px) {
+  .site-header {
+    background: url(../img/lock_2.jpg) no-repeat center center scroll;
+    background-size: cover; }
+  .callout {
+    background: url(../img/keyboard.jpg) no-repeat center center scroll;
+    background-size: cover; } }
+
+/* About */
+.about {
+  padding: 50px 0; }
+
+/* Services */
+.services {
+  padding: 50px 0; }
+
+.service-item {
+  margin-bottom: 30px; }
 
 /* Portfolio */
 .portfolio {

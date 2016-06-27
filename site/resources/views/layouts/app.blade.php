@@ -28,6 +28,9 @@
 
   <body>
     <div class="container">
+      <div class="notification-container">
+
+      </div>
 
     {{-- Content --}}
     @yield('content')

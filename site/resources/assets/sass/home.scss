@@ -19,31 +19,10 @@
   margin: 5px 5px 0 0;
 }
 
-/* Header */
-.header {
-  display: table;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
+/* Site Header */
 .site-header {
   background: url(../img/lock_2.jpg) no-repeat center center scroll;
   background-size: cover;
-}
-
-/* About */
-.about {
-  padding: 50px 0;
-}
-
-/* Services */
-.services {
-  padding: 50px 0;
-}
-
-.service-item {
-  margin-bottom: 30px;
 }
 
 /* Callout */
@@ -59,6 +38,98 @@
     background-color: rgba(0,0,0,0.3);
   }
 }
+
+/* ----------- Phones ----------- */
+@media
+  (max-device-width: 800px) {
+    .site-header {
+      background: url(../img/lock_2_800.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+
+    .callout {
+      background: url(../img/keyboard_800.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+  }
+
+/* ----------- Tablets ----------- */
+/* Portrait and Landscape */
+@media
+  (min-device-width: 800px)
+  and (max-device-width: 1280px) {
+    .site-header {
+      background: url(../img/lock_2_1280.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+
+    .callout {
+      background: url(../img/keyboard_1280.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+  }
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .site-header {
+      background: url(../img/lock_2_1600.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+
+    .callout {
+      background: url(../img/keyboard_1600.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+  }
+
+/* ----------- Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .site-header {
+      background: url(../img/lock_2.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+
+    .callout {
+      background: url(../img/keyboard.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+  }
+
+/* ----------- Larger Screens ----------- */
+@media screen
+  and (min-device-width: 1600px) {
+    .site-header {
+      background: url(../img/lock_2.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+
+    .callout {
+      background: url(../img/keyboard.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
+  }
+
+/* About */
+.about {
+  padding: 50px 0;
+}
+
+/* Services */
+.services {
+  padding: 50px 0;
+}
+
+.service-item {
+  margin-bottom: 30px;
+}
+
 
 /* Portfolio */
 .portfolio {

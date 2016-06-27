@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+  return view('home');
 });
+
 
 Route::auth();
 
@@ -25,6 +26,9 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration Routes
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// Welcome Route
+Route::get('/welcome', 'WelcomeController@profile');
 
 // Home Route
 Route::get('/home', 'HomeController@index');

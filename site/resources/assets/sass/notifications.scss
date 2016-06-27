@@ -1,0 +1,51 @@
+.notification-container {
+  position: fixed;
+  top: 55px;
+  right: 5px;
+  z-index: 998;
+}
+
+.notification {
+  width: 350px;
+  z-index: 999;
+  display: flex;
+  flex-flow: row;
+  margin-top: 5px;
+  opacity: 1;
+  transition: opacity 1s linear;
+
+  &.clear {
+    opacity: 0;
+  }
+
+  .icon-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 55px;
+    margin: 0;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+    i {
+      color: #fff;
+    }
+  }
+
+  .text-container {
+    flex-grow: 3;
+    padding: 10px;
+
+    h4 {
+      font-weight: bold;
+      color: #222;
+      font-size: 17px;
+      margin-top: 5px;
+    }
+
+    p {
+      color: #222;
+      font-size: 14px;
+    }
+  }
+}

@@ -13,6 +13,6 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
   mix.sass(['app.scss', 'home.scss'])
-  .scripts(['navbar.js', 'trilobyte.js', 'colors.js'])
+  .scripts(['navbar.js', 'trilobyte.js', 'colors.js', 'notifications.js'])
   .copy('node_modules/whatwg-fetch/fetch.js', 'public/js');
 });

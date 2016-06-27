@@ -42,10 +42,10 @@
           @foreach ($link->tags as $tag)
             <span class="tag label label-info">{{ $tag->title }}</span>
           @endforeach
-          {{ $link->tags }}
         </div>
       </div>
     </div>
+    <hr>
     @endforeach
   </div>
 </div>

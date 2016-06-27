@@ -31,7 +31,7 @@
       </li>
     @else
       <li>
-        <a href="{{ url('/profile') }}">
+        <a href="{{ url('/welcome') }}">
           {{ Auth::user()->username }}
         </a>
       </li>

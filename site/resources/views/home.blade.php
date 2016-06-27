@@ -1,3 +1,5 @@
+{{-- views/home --}}
+
 @extends('layouts.app')
 
 @section('content')
