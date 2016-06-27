@@ -10,7 +10,7 @@
 @include('components.page_title', ['title' => 'Blog'])
 
 {{-- Create Blog Form --}}
-<div class="segment bg-green">
+<div class="segment bg-green full-page">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">

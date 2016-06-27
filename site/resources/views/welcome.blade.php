@@ -26,14 +26,14 @@
     </div>
   </div>
 </div>
-<div class="container full-page">
+<div class="container full-page activity">
   {{-- User Activity --}}
   @if (count($blogs) > 0)
     @foreach ($blogs as $blog)
       <div class="row">
         <div class="col-sm-8 col-sm-push-2">
           <a href="/blogs/{{ $blog->slug }}">
-            <h3 class="title">{{ $blog->title }}</h3>
+            <h3 class="title"><i class="fa fa-lg fa-file-text-o"></i>{{ $blog->title }}</h3>
           </a>
           <p class="text-muted date"><i class="fa fa-clock-o"></i> {{$blog->created}}</p>
         </div>
@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-sm-8 col-sm-push-2">
           <a href="{{ $link->url }}">
-            <h3 class="title">{{ $link->title }}</h3>
+            <h3 class="title"><i class="fa fa-lg fa-link"></i> {{ $link->title }}</h3>
           </a>
           <p class="text-muted date"><i class="fa fa-clock-o"></i> {{$link->created}}</p>
         </div>

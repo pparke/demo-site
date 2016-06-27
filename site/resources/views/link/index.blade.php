@@ -38,6 +38,11 @@
         <p class="card-text date"><small class="text-muted">{{ $link->created }}</small></p>
         <p class="card-text description">{{ $link->description }}</p>
         <p class="text-muted author">posted by {{ $link->user->username }}</p>
+        {{-- Delete Button --}}
+        @if(Auth::id() == $link->user->id)
+          <a class="btn btn-square btn-light btn-small bg-red" data-token="{!! csrf_token() !!}" onclick="deleteLink(this, {{ $link->id }})">Delete</a>
+        @endif
+        {{-- Tags --}}
         <div class="tags">
           @foreach ($link->tags as $tag)
             <span class="tag label label-info">{{ $tag->title }}</span>
@@ -52,5 +57,28 @@
 @else
   <h1 class="text-center text-muted text-large">Sorry, nothing here yet</h1>
 @endif
+
+<script>
+  function deleteLink(btn, id) {
+    var token = $(btn).data('token');
+    // send update
+    fetch('/links/' + id, {
+      credentials: 'same-origin',
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-TOKEN': token
+      }
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      $(btn).parents('.card.link-card').remove();
+    });
+  }
+</script>
 
 @endsection

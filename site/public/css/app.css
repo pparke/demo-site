@@ -5770,6 +5770,10 @@ a {
     margin-bottom: 2px;
     box-shadow: 0 5px rgba(0, 0, 0, 0.8); }
 
+.btn-small {
+  font-size: 10px;
+  padding: 5px 10px 5px 10px; }
+
 .btn-dark {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.4);
@@ -5903,6 +5907,10 @@ footer {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400; }
 
+.activity h3 i {
+  margin-right: 15px;
+  margin-left: -45px; }
+
 /* ----------- Phones ----------- */
 @media (max-width: 600px) {
   .welcome-header {
@@ -5918,7 +5926,11 @@ footer {
       background: url(../img/night_800.jpg) no-repeat center center scroll;
       background-size: cover; }
     .welcome-header h3 {
-      font-size: 24px; } }
+      font-size: 24px; }
+  .activity h3 i {
+    margin-left: 0; }
+  .activity p.date {
+    margin-left: 42px; } }
 
 @media (max-width: 800px) and (min-width: 600px) {
   .welcome-header.morning {
@@ -5929,7 +5941,11 @@ footer {
     background-size: cover; }
   .welcome-header.evening {
     background: url(../img/night_800.jpg) no-repeat center center scroll;
-    background-size: cover; } }
+    background-size: cover; }
+  .activity h3 i {
+    margin-left: 0; }
+  .activity p.date {
+    margin-left: 42px; } }
 
 /* ----------- Tablets ----------- */
 /* Portrait and Landscape */
@@ -6242,7 +6258,7 @@ footer {
   .link-card a {
     text-decoration: none; }
   .link-card img {
-    max-width: 100%; }
+    max-width: 50%; }
   .link-card h3.title {
     font-size: 2.6em; }
   .link-card p.description {

@@ -18,6 +18,15 @@
   }
 }
 
+.activity {
+  h3 {
+    i {
+      margin-right: 15px;
+      margin-left: -45px;
+    }
+  }
+}
+
 /* ----------- Phones ----------- */
 @media
   (max-width: 600px) {
@@ -40,6 +49,16 @@
         font-size: 24px;
       }
     }
+    .activity {
+      h3 {
+        i {
+          margin-left: 0;
+        }
+      }
+      p.date {
+        margin-left: 42px;
+      }
+    }
   }
 @media
   (max-width: 800px)
@@ -56,6 +75,16 @@
       &.evening {
         background: url(../img/night_800.jpg) no-repeat center center scroll;
         background-size: cover;
+      }
+    }
+    .activity {
+      h3 {
+        i {
+          margin-left: 0;
+        }
+      }
+      p.date {
+        margin-left: 42px;
       }
     }
   }
