@@ -17,7 +17,7 @@ class CreateLinksTable extends Migration
         $table->integer('user_id')->unsigned()->references('id')->on('users');
         $table->string('title');
         $table->text('url');
-        $table->text('image');
+        $table->text('image')->nullable();
         $table->text('description');
         $table->timestamps();
       });

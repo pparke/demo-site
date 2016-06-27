@@ -68,12 +68,13 @@ class LinkController extends BaseController
 
     // use embedly to scrape the page
     $result = Link::embedly($request->input('url'));
+    $img = count($result->images) > 0 ? $result->images[0]->url : null;
 
     // create a new instance
     $link = $request->user()->links()->create([
       'title' => $request->input('title'),
       'url' => $result->url,
-      'image' => $result->images[0]->url,
+      'image' => $img,
       'description' => $result->description,
     ]);
 
