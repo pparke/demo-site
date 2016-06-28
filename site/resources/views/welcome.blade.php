@@ -30,26 +30,38 @@
   {{-- User Activity --}}
   @if (count($blogs) > 0)
     @foreach ($blogs as $blog)
-      <div class="row">
+      <div class="row activity-item">
         <div class="col-sm-8 col-sm-push-2">
           <a href="/blogs/{{ $blog->slug }}">
             <h3 class="title"><i class="fa fa-lg fa-file-text-o"></i>{{ $blog->title }}</h3>
           </a>
           <p class="text-muted date"><i class="fa fa-clock-o"></i> {{$blog->created}}</p>
         </div>
+        @if(Auth::id() == $blog->user->id)
+        <div class="col-sm-2 activity-controls">
+            {{-- Delete Button --}}
+            <a class="btn btn-square btn-light btn-small bg-red" data-token="{!! csrf_token() !!}" onclick="deleteItem(this, 'blogs', {{ $blog->id }})">Delete</a>
+        </div>
+        @endif
       </div>
       <hr>
     @endforeach
   @endif
   @if (count($links) > 0)
     @foreach ($links as $link)
-      <div class="row">
+      <div class="row activity-item">
         <div class="col-sm-8 col-sm-push-2">
           <a href="{{ $link->url }}">
             <h3 class="title"><i class="fa fa-lg fa-link"></i> {{ $link->title }}</h3>
           </a>
           <p class="text-muted date"><i class="fa fa-clock-o"></i> {{$link->created}}</p>
         </div>
+        @if(Auth::id() == $link->user->id)
+        <div class="col-sm-2 activity-controls">
+            {{-- Delete Button --}}
+            <a class="btn btn-square btn-light btn-small bg-red" data-token="{!! csrf_token() !!}" onclick="deleteItem(this, 'links', {{ $link->id }})">Delete</a>
+        </div>
+        @endif
       </div>
       <hr>
     @endforeach
@@ -79,6 +91,30 @@ $(document).ready(function() {
   }
   tick();
 });
+
+/*
+ * Delete an activity item
+ */
+function deleteItem(btn, route, id) {
+  var token = $(btn).data('token');
+  // send update
+  fetch('/' + route + '/' + id, {
+    credentials: 'same-origin',
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'X-CSRF-TOKEN': token
+    }
+  })
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    $(btn).parents('.activity-item').remove();
+  });
+}
 
 /**
  * Update the time display each minute

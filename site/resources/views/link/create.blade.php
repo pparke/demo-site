@@ -5,7 +5,7 @@
 @section('content')
 
 <!-- Navigation -->
-@include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links']])
+@include('components.nav', ['items' => ['Home' => '/', 'Blog' => '/blogs', 'Links' => '/links'], 'backhref' => '/links'])
 
 @include('components.page_title', ['title' => 'Links'])
 
