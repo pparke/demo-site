@@ -71,7 +71,7 @@ function makeEditable (items) {
 
   // save the current text
   title = titleElem.text();
-  content = contentElem.text();
+  content = contentElem.html();
 
   // replace the existing title and content with editable fields
   titleElem.replaceWith('<input type="text" name="title" id="edit-title" class="form-control blog-edit-title blog-title-input" autocomplete="off">');
